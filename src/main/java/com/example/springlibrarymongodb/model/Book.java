@@ -11,21 +11,6 @@ public class Book {
     private String isbn;
     private boolean available;
 
-    // Constructors, getters, setters, and other methods
-
-    // Constructors, getters, setters, and other methods
-
-    public Book(String id, String title, String author, String isbn, boolean available) {
-        this.id = id;
-        this.title = title;
-        this.author = author;
-        this.isbn = isbn;
-        this.available = available;
-    }
-
-    public Book() {
-    }
-
     public String getId() {
         return id;
     }
@@ -64,5 +49,16 @@ public class Book {
 
     public void setAvailable(boolean available) {
         this.available = available;
+    }
+
+    public Book(String id, String title, String author, String isbn, boolean available) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.available = available;
+    }
+
+    public Book() {
     }
 }

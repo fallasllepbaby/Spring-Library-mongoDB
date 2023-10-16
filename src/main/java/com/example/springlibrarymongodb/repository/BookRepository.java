@@ -1,4 +1,7 @@
 package com.example.springlibrarymongodb.repository;
 
-public class BookRepository {
+import com.example.springlibrarymongodb.model.Book;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface BookRepository extends MongoRepository<Book, String> {
 }

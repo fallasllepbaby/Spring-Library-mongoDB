@@ -13,21 +13,6 @@ public class Loan {
     private String bookId;
     private Date dueDate;
 
-    // Constructors, getters, setters, and other methods
-
-    // Constructors, getters, setters, and other methods
-
-
-    public Loan() {
-    }
-
-    public Loan(String id, String userId, String bookId, Date dueDate) {
-        this.id = id;
-        this.userId = userId;
-        this.bookId = bookId;
-        this.dueDate = dueDate;
-    }
-
     public String getId() {
         return id;
     }
@@ -57,6 +42,16 @@ public class Loan {
     }
 
     public void setDueDate(Date dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public Loan() {
+    }
+
+    public Loan(String id, String userId, String bookId, Date dueDate) {
+        this.id = id;
+        this.userId = userId;
+        this.bookId = bookId;
         this.dueDate = dueDate;
     }
 }

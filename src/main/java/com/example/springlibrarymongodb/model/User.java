@@ -7,12 +7,8 @@ public class User {
     @Id
     private String id;
     private String username;
-    private String password; // You should securely hash the password.
-    private String role; // You can use roles for authorization.
-
-    // Constructors, getters, setters, and other methods
-
-    // Constructors, getters, setters, and other methods
+    private String password;
+    private String role;
 
     public String getId() {
         return id;
