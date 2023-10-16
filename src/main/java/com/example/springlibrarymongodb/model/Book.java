@@ -1,14 +1,15 @@
 package com.example.springlibrarymongodb.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.stereotype.Component;
 
+@Component
 @Document
 public class Book {
     @Id
     private String id;
     private String title;
     private String author;
-    private String isbn;
     private boolean available;
 
     public String getId() {
@@ -35,14 +36,6 @@ public class Book {
         this.author = author;
     }
 
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
-
     public boolean isAvailable() {
         return available;
     }
@@ -55,7 +48,6 @@ public class Book {
         this.id = id;
         this.title = title;
         this.author = author;
-        this.isbn = isbn;
         this.available = available;
     }
 
