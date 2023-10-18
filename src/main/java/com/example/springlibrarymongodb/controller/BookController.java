@@ -4,13 +4,10 @@ package com.example.springlibrarymongodb.controller;
 import com.example.springlibrarymongodb.model.Book;
 import com.example.springlibrarymongodb.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/book")
+@RequestMapping("/library")
 public class BookController {
 
     private final BookService bookService;
@@ -23,5 +20,10 @@ public class BookController {
     @PostMapping("/save")
     public void save(@RequestBody Book book) {
         bookService.save(book);
+    }
+
+    @GetMapping
+    public String hello() {
+        return "hello";
     }
 }

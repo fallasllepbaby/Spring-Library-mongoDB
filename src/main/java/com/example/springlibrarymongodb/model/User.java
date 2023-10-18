@@ -1,16 +1,39 @@
 package com.example.springlibrarymongodb.model;
+
+import jakarta.validation.constraints.Size;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
+
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+
 
 @Component
 @Document
 public class User {
     @Id
     private String id;
+    @Size(min = 2, message = "Не меньше 5 знаков")
     private String username;
+    @Size(min = 2, message = "Не меньше 5 знаков")
     private String password;
-    private String role;
+    @DBRef
+    private Set<Book> books = new HashSet<>();
+    @DBRef
+    private Set<Role> roles = new HashSet<>();
+
+    public User() {
+    }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
     public String getId() {
         return id;
@@ -36,21 +59,19 @@ public class User {
         this.password = password;
     }
 
-    public String getRole() {
-        return role;
+    public Set<Book> getBooks() {
+        return books;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setBooks(Set<Book> books) {
+        this.books = books;
     }
 
-    public User(String id, String username, String password, String role) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.role = role;
+    public Set<Role> getRoles() {
+        return roles;
     }
 
-    public User() {
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }
